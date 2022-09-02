@@ -142,6 +142,8 @@ button {
 }
 
 .header-contacts .mail, .header-contacts .phone {
+    display: flex;
+    align-items: center;
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -169,8 +171,9 @@ button {
 .hero {
     display: flex;
     flex-direction: column;
-    padding-left: auto;
-    padding-right: auto;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 200px;
     padding-bottom: 200px;
     align-items: center;
@@ -238,8 +241,16 @@ button {
     column-gap: 30px;
 }
 
+.features-item {
+    width: 270px;
+}
+
 .features-item-rectangle {
-    padding: 25px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
     margin-bottom: 30px;
     border-radius: 4px;
     background-color: var(--secondary-background-color);
@@ -248,15 +259,15 @@ button {
 .features .icon {
     width: 70px;
     height: 70px;
-    margin: 0 auto;
-    
+    margin: 0;
 }
 
 .features .title {
     margin-bottom: 9px;
 
+    font-size: 14px;
     font-weight: 700;
-    line-height: 1.14;
+    line-height: 1.17;
     text-transform: uppercase;
     color: var(--headers-color);
 }
@@ -344,13 +355,15 @@ button {
 .social-media-list {
     display: flex;
     column-gap: 10px;
-    align-items: center;
-    margin: 16px 32px 30px 32px;
+    justify-content: center;
+    margin-top: 16px;
+    margin-bottom: 30px;
 }
 
 .social-media-icon {
     width: 20px;
     height: 20px;
+    fill: var(--icon-color);
 }
 
 .social-media-link {
@@ -359,16 +372,18 @@ button {
     justify-content: center;
     width: 44px;
     height: 44px;
-    border-radius: 50%;
-
-    fill: var(--icon-color);
+    border-radius: 50%; 
     background-color: var(--main-background-color);
 }
 
 .social-media-link:hover,
 .social-media-link:focus {
-    fill: var(--white-text-color);
     background-color: var(--accent-color);
+}
+
+.social-media-link:hover .icon,
+.social-media-link:focus .icon {
+    fill: var(--white-text-color);
 }
 
 /* CUSTOMERS */
@@ -390,24 +405,35 @@ button {
     margin: 0;
 }
 
-.company-logo .icon {
-    width: 106px;
-    height: 60px;
-    margin: 15px 31px;
+.customer-company-logo {
+    width: 170px;
+    height: 92px;
 }
 
-.company-logo {
+.customer-link {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+}
+
+.customer-company-logo .icon {
+    width: 106px;
+    height: 60px;
     fill: var(--icon-color);
 }
 
-.company-logo:hover {
-    fill: var(--accent-color);
+.customer-link:hover,
+.customer-link:focus {
     border-color: var(--accent-color);
+}
+
+.customer-link:hover .icon,
+.customer-link:focus .icon{
+    fill: var(--accent-color);
 }
 
 /* FOOTER */
@@ -459,7 +485,6 @@ footer {
 }
 
 .social-media-header {
-    font-size: 14px;
     font-weight: 700;
     line-height: 1.17;
     letter-spacing: 0.03em;
@@ -550,7 +575,7 @@ footer {
     background-color: var(--main-background-color);
 }
 
-.project-card:hoverб
+.project-card:hover,
 .project-card:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
